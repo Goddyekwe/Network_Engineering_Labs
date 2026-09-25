@@ -117,3 +117,79 @@ SW3 ── PC1
 SW4 ── PC2
 SW7 ── PC3
 SW8 ── SRV1
+```
+
+## Copper Crossover
+
+Crossover Ethernet cables are traditionally used to connect similar types of Ethernet devices when Auto-MDI/MDIX is unavailable or disabled.
+
+Examples include:
+```text
+Router → Router
+Switch → Switch
+```
+Examples:
+```text
+R1 ─── R2
+
+SW1 ─── SW2
+SW1 ─── SW3
+SW2 ─── SW4
+SW5 ─── SW6
+SW5 ─── SW7
+SW6 ─── SW8
+```
+
+The lab instructions specifically state that Auto-MDI/MDIX should be considered disabled or unsupported, making the traditional cable-selection rules relevant to this exercise.
+
+### Fiber-Optic Connections
+
+Fiber is used for longer-distance network connections.
+
+### Single-Mode Fiber
+
+The R1–R3 connection spans approximately 3 kilometers.
+```text
+R1 ═════════════════════════ R3
+          3 km
+      Single-Mode Fiber
+```
+Single-mode fiber is appropriate for longer-distance communication because it is designed to carry optical signals over significantly greater distances than typical multimode fiber.
+
+### Multimode Fiber
+
+The R3–R4 connection spans approximately 250 meters.
+```text
+R3 ═════════ R4
+    250 m
+Multimode Fiber
+```
+Multimode fiber is commonly used for shorter-distance fiber connections, such as within buildings, campuses, and other local infrastructure.
+
+## Distance Considerations
+
+The project intentionally includes different physical distances to demonstrate that cable selection is not based only on the devices being connected.
+
+| Connection	| Distance	| Selected Media |
+|---|---|---|
+| R1–R2 |	50 m	| Copper |
+| R1–R3	| 3 km	| Single-Mode Fiber |
+| R3–R4	| 250 m	| Multimode Fiber |
+
+The physical distance between devices is an important consideration when designing a network.
+
+## Key Concepts Learned
+
+This project provided practical experience with:
+
+- Ethernet cable types
+- Copper straight-through cables
+- Copper crossover cables
+- Fiber-optic cables
+- Single-mode fiber
+- Multimode fiber
+- Router interfaces
+- Switch interfaces
+- Physical network topology
+- Network distance considerations
+- Device-to-device connectivity
