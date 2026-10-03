@@ -1,0 +1,60 @@
+
+R1>en
+R1#show ip int bri
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES NVRAM  up                    up 
+GigabitEthernet0/0.10  10.0.0.62       YES manual up                    up 
+GigabitEthernet0/0.20  10.0.0.126      YES manual up                    up 
+GigabitEthernet0/0.30  10.0.0.190      YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES NVRAM  administratively down down 
+GigabitEthernet0/2     unassigned      YES NVRAM  administratively down down 
+GigabitEthernet0/0/0   1.1.1.2         YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#no int g0/0.10
+R1(config)#
+%LINK-3-UPDOWN: Interface GigabitEthernet0/0.10, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.10, changed state to down
+
+R1(config)#no int g0/0.20
+R1(config)#
+%LINK-3-UPDOWN: Interface GigabitEthernet0/0.20, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.20, changed state to down
+
+R1(config)#no int g0/0.30
+R1(config)#
+%LINK-3-UPDOWN: Interface GigabitEthernet0/0.30, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.30, changed state to down
+
+R1(config)#default int g0/0
+Building configuration...
+
+
+
+Interface GigabitEthernet0/0 set to default configuration
+R1(config)#do show ip int bri
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES NVRAM  up                    up 
+GigabitEthernet0/1     unassigned      YES NVRAM  administratively down down 
+GigabitEthernet0/2     unassigned      YES NVRAM  administratively down down 
+GigabitEthernet0/0/0   1.1.1.2         YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+R1(config)#
+R1(config)#
+R1(config)#int g0/0
+R1(config-if)#ip add 10.0.0.194 255.255.255.252
+R1(config-if)#no shut
+R1(config-if)#do show ip int bri
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     10.0.0.194      YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES NVRAM  administratively down down 
+GigabitEthernet0/2     unassigned      YES NVRAM  administratively down down 
+GigabitEthernet0/0/0   1.1.1.2         YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+R1(config-if)#
+
+
