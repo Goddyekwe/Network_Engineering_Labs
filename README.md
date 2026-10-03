@@ -2,12 +2,6 @@
 A collection of hands-on networking labs, projects, configurations, diagrams, and troubleshooting exercises covering Cisco networking, routing, switching, VLANs, subnetting, network security, and infrastructure design.
 
 
-```text
-# Network Engineering Labs
-
-A collection of hands-on networking labs, projects, configurations,
-network designs, and troubleshooting exercises.
-
 This repository documents my journey in network engineering through
 practical implementation using Cisco IOS, Cisco Packet Tracer,
 network simulation, infrastructure design, and troubleshooting.
